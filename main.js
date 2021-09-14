@@ -2,13 +2,14 @@
  * Set everything up
  */
 
-const todoListEl = document.querySelector("#todoList");
-const newTodoEl = document.querySelector("#newTodo");
+import { listenForDeleteTodo } from "./static/js/Events.js";
 
-newTodoEl.addEventListener("new-todo", (e) => {
+document.querySelector("#newTodo").addEventListener("new-todo", (e) => {
+	const todoListEl = document.querySelector("#todoList");
 	todoListEl.addTodo(e.detail);
 });
 
-window.addEventListener("delete-todo", (e) => {
+listenForDeleteTodo((e) => {
+	const todoListEl = document.querySelector("#todoList");
 	todoListEl.deleteTodo(e.detail);
 });

@@ -1,3 +1,5 @@
+import { dispatchDeleteTodo } from "./Events.js";
+
 export class ToDoItem extends HTMLElement {
 	constructor(id, text) {
 		super();
@@ -32,38 +34,11 @@ export class ToDoItem extends HTMLElement {
 		b.innerText = "-";
 		b.addEventListener("click", (e) => {
 			e.preventDefault();
-
-			window.dispatchEvent(
-				new CustomEvent("delete-todo", {
-					detail: this._id,
-				})
-			);
-
+			dispatchDeleteTodo(this._id);
 			this.remove();
 		});
 
 		this.insertAdjacentElement("beforeend", b);
-	}
-
-	/******************************************************************************
-	 * Properties
-	 *****************************************************************************/
-
-	get id() {
-		return this._id;
-	}
-
-	set id(value) {
-		this._id = value;
-		this.setAttribute("data-id", value);
-	}
-
-	get text() {
-		return this._text;
-	}
-
-	set text(value) {
-		this._text = value;
 	}
 }
 

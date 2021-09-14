@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="A Vanilla JS todo sample application" />
+
+		<title>Vanilla JS To Do 2021</title>
+		<link rel="stylesheet" type="text/css" href="/static/css/styles.css" />
+	</head>
+
+	<body>
+		<main class="ToDo">
+			<img
+				class="Logo"
+				src="/static/images/logo.png"
+				alt="JavaScript logo"
+			/>
+			<h1 class="ToDo-Header">Vanilla JS To Do</h1>
+
+			<div class="ToDo-Container">
+				<todo-list id="todoList"></todo-list>
+				<new-todo-item id="newTodo"></new-todo-item>
+
+				<error-messager></error-messager>
+			</div>
+		</main>
+
+		<script type="module" src="/static/js/ToDoList.js"></script>
+		<script type="module" src="/static/js/NewTodoItem.js"></script>
+		<script type="module" src="/static/js/ErrorMessager.js"></script>
+		<script type="module" src="/main.js"></script>
+	</body>
+</html>
